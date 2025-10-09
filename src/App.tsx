@@ -81,6 +81,7 @@ const App: React.FC = () => (
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
+
   </IonApp>
 );
 

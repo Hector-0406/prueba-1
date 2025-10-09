@@ -16,7 +16,10 @@ const Tab3: React.FC = () => {
             <IonTitle size="large">Tab 3</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Tab 3 page" />
+        
+        <div className="Contenedor3">
+          <h1>Hello World!</h1>
+        </div>
       </IonContent>
     </IonPage>
   );
