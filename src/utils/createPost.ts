@@ -1,4 +1,4 @@
-import {client, ArmaData} from '../api/clients';
+import {client, ArmaPost} from '../api/clients';
 
 export const createPost = async (
         nombre: string,
@@ -7,7 +7,7 @@ export const createPost = async (
         especial: string,
         encantamiento: string,
         durabilidad: string,
-        descripcion: string): Promise<ArmaData> => {    
+        descripcion: string): Promise<ArmaPost> => {    
     const{data} = await client.post('',
         {nombre, tipo, danio, especial, encantamiento, durabilidad, descripcion}
     )

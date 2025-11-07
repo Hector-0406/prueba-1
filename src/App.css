@@ -1,0 +1,8 @@
+/* Tabs con diseño Minecraft */
+.minecraft-tab-bar {
+    --background: #000;
+    --color: #FFFFFF;
+    --color-selected: #55FF55;
+    font-family: monospace;
+    font-size: 14px;
+}

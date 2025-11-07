@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 export const client = axios.create({
-    baseURL: 'http://127.0.0.1:5000/registarArma'
+    baseURL: 'http://100.113.115.21:5000/registrarArma'
 });
 
-export interface ArmaData {
+export interface ArmaPost {
     nombre: String,
     tipo: String,
     danio: String,

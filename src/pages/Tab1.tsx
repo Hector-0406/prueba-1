@@ -1,90 +1,160 @@
-import "./Tab1.css";
-import { useState } from "react";
-import {IonContent, IonHeader, IonPage, IonTitle, IonToolbar} from "@ionic/react";
-import {IonInput, IonButton, IonImg, IonCheckbox, IonToggle} from "@ionic/react";
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import {IonInput, IonButton, IonTextarea} from '@ionic/react';
+import { useIonToast } from '@ionic/react';
+import { useState } from 'react';
+import { createPost } from '../utils/createPost';
+import './Tab1.css';
 
 const Tab1: React.FC = () => {
-  {/* Inputs */}
+  /* Mensaje de Tostada */
+  const [present] = useIonToast();
+
+  const Toast = (message: string) => {
+    present({
+      message,
+      duration: 1500,
+      position: 'bottom'
+    });
+  };
+
+  /* Variables  */
   const [nombre, setNombre] = useState<string>("");
-  const [semilla, setSemilla] = useState<number>(0);
-  {/* Modo de juego */}
-  const [survival, setSurvival] = useState<string>("Supervivencia");
-  const [creative, setCreative] = useState<string>("Creativo");
-  {/* Dificultad */}
-  const [pacific, setPacific] = useState<string>("Pacifico");
-  const [easy, setEasy] = useState<string>("Fácil");
-  const [normal, setNormal] = useState<string>("Normal");
-  const [hard, setHard] = useState<string>("Difícil");
-  {/* Tipo de mundo */}
-  const [defaultWorld, setDefaultWorld] = useState<string>("Default");
-  const [flatWorld, setFlatWorld] = useState<string>("Plano");
-  {/* Permitir trampas */}
-  const [permitirTrampas, setPermitirTrampas] = useState<boolean>(false);
+  const [tipo, setTipo] = useState<string>("");
+  const [danio, setDanio] = useState<string>("");
+  const [especial, setEspecial] = useState<string>("");
+  const [encanto, setEncanto] = useState<string>("");
+  const [durabilidad, setDurabilidad] = useState<string>("");
+  const [descripcion, setDescripcion] = useState<string>("");
+
+  /* Evento para el boton de guardar */
+  const [isSaving, setIsSaving] = useState<boolean>(false);
+
+  const Guardar = async () => {
+      setIsSaving(true);
+      try {
+          await createPost(
+          nombre,
+          tipo,
+          danio,
+          especial,
+          encanto,
+          durabilidad,
+          descripcion
+        );
+        Toast("Arma Registrada")
+      }catch(error){
+        console.error('Error guardando arma:', error)
+        Toast("Error al guardar arma");
+      }finally{
+        setIsSaving(false);
+      }
+  }
 
   return (
-    <IonPage>
-      {/*Titulo del Encabezado */}
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Minecraft</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+  <IonPage>
+    {/* Header */}
+    <IonHeader>
+      <IonToolbar className='toolbar'>
+        <IonTitle className='header'>Minecraft</IonTitle>
+      </IonToolbar>
+    </IonHeader>
+    
+    <IonContent fullscreen className='IonContent'>
+      <div className="main-container">
+        <IonHeader id="Titulo">CREAR ARMA PERSONALIZADA</IonHeader>
 
-      <IonContent fullscreen class="Content">
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 1</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-
-        {/* Contenedor de los componentes */}
-        <div className="PanelTitulo">
-          <IonHeader id="Titulo">CREAR UN MUNDO NUEVO</IonHeader>
+        <div className="info-block">
+          <h5>¡Bienvenido, Herrero!</h5>
+          <p>
+            Aquí puedes Crear tus propias Armas (espadas, arcos, hachas) para usarlas en tus Mods o Addons de Minecraft. 
+            <br />
+            <br />
+            Define cada atributo y ¡prepárate para la batalla!
+          </p>
         </div>
 
-        <div className="Contenedor">
-          <div className="PanelIzquierdo">
-            <IonImg src="Img/minecraft.webp" id="Mundo"></IonImg>
-            <IonButton className="ButtonsIzq">Crear</IonButton>
-            <IonButton className="ButtonsIzq">Crear en Realms</IonButton>
-            <IonButton className="ButtonsIzq" id="general">General</IonButton>
-            <IonButton className="ButtonsIzq">Avanzado</IonButton>
-            <IonButton className="ButtonsIzq">Multijugador</IonButton>
-            <IonButton className="ButtonsIzq">Trucos</IonButton>
-          </div>
+        <div className="form-container">
+          <IonInput 
+            className='IonInput'
+            id="nombre_arma" 
+            type="text"  
+            label='Nombre de arma'
+            placeholder="Nombre"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setNombre(e.detail.value!)} />
 
-          <div className="PanelDerecho">
-            <p>Nombre del mundo</p>
+          <IonInput 
+            className='IonInput'
+            id="tipo_arma" 
+            type="text" 
+            label='Tipo de arma'
+            placeholder="Espada"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setTipo(e.detail.value!)} />
+
+          <IonInput 
+            className='IonInput'
+            id="daño_arma" 
+            type="text"
+            label='Daño'
+            placeholder="10"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setDanio(e.detail.value!)} />
+
+          <IonInput 
+            className='IonInput'
+            id="especial_arma" 
+            type="text" 
+            label='Especial'
+            placeholder="Fuego"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setEspecial(e.detail.value!)} />
+
+          <IonInput 
+            className='IonInput'
+            id="" 
+            type="text" 
+            label='Encantamiento'
+            placeholder="Daño de fuego"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setEncanto(e.detail.value!)} />
+
             <IonInput 
-              id="Nombre_Mundo" 
-              type="text" 
-              placeholder="Mi mundo"
-              onIonChange={(e) => setNombre(e.detail.value!)} />
-            <p>Semilla de Mundo</p>
+            className='IonInput'
+            id="duarabildad" 
+            type="text" 
+            label='Durablidad'
+            placeholder="Material"
+            labelPlacement='floating'
+            fill="outline"
+            onIonChange={(e) => setDurabilidad(e.detail.value!)} />
 
-            <IonInput 
-              id="semilla" 
-              type="number" 
-              placeholder="32578403"
-              onIonChange={(e) => setSemilla(Number(e.detail.value!))} />
+            <IonTextarea
+              className='descripcion-multi'
+              id="descripcion_arma"
+              label='Decripción'
+              placeholder="Daño de fuego a los enemigos"
+              labelPlacement='floating'
+              fill="outline"
+              onIonChange={(e) => setDescripcion(e.detail.value!)}
+              rows={4}
+              autoGrow={true}/>
 
-            <p>Modo de Juego</p>
-            <IonButton className="Modo">Supervivencia</IonButton>
-            <IonButton className="Modo">Creativo</IonButton> <br />
-            <p>Dificultad</p>
-            <IonButton className="Difficult">Pacifico</IonButton>
-            <IonButton className="Difficult">Fácil</IonButton>
-            <IonButton className="Difficult">Normal</IonButton>
-            <IonButton className="Difficult">Difícil</IonButton>
-            <p>Tipo de Mundo</p>
-            <IonCheckbox>Default</IonCheckbox>
-            <IonCheckbox>Plano</IonCheckbox>
-            <p>Permitir Trampas</p>
-            <IonToggle checked={false}></IonToggle>
-          </div>
+            <IonButton 
+              className='IonButton' 
+              onClick={Guardar}
+              disabled={isSaving}>
+              Guardar
+            </IonButton>
         </div>
-      </IonContent>
-    </IonPage>
+      </div>
+    </IonContent>
+  </IonPage>
   );
 };
 
