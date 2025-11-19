@@ -1,219 +1,213 @@
+@font-face {
+  font-family: "Monocraft";
+  src: url("../fonts/Monocraft.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "Monocraft", Monocraft;
+}
+
+:root {
+  --ion-font-family: "Monocraft", Monocraft;
+}
+
 .main-container {
-    text-align: center;
-    padding-bottom: 20px;
-    background-color: #000; 
-    min-height: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: #000;
+  min-height: 100%;
 }
 
-.header{
-    --color: #55FF55; 
-    font-family: monospace; 
-    font-size: 20px;
-}
-
-.toolbar{
-    --background: #000;
-}
-
-.IonContent {
-    --background: #000;
-}
-
-.info-block {
-    padding: 10px; 
-    width: min(480px, 90%); 
-    margin: 10px auto;
-    height: 135px;
-    background-color: #8B8B8B; 
-    border: 3px solid #000; 
-    box-shadow: 
-        inset 0 0 0 2px #C6C6C6, 
-        0 4px 0 0 #555555; 
-    text-align: center;
-}
-
-.info-block h5 {
-    color: #212121;
-    font-size: 20px;
-    font-family: monospace;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
-
-.info-block p {
-    color: #202020; 
-    font-size: 12px;
-    font-family: monospace;
-    font-weight: normal;
-    line-height: 1.4;
-    margin: 0;
-}
-
-.info-block p strong {
-    color: #000; /* Texto en negrita más oscuro para énfasis */
+.header {
+  --color: #55ff55;
+  font-family: "Monocraft", Monocraft;
+  font-size: 20px;
 }
 
 #Titulo {
-    padding: 5px; 
-    margin-bottom: 10px;
-    text-align: center;
-    background-color: #8B8B8B; 
-    color: #212121; 
-    font-size: 18px;
-    font-weight: bold;
-    border: 3px solid #000; 
-    box-shadow: 
-        inset 0 0 0 2px #C6C6C6,  
-        0 4px 0 0 #555555; 
-    font-family: monospace; 
+  padding: 8px;
+  margin-bottom: 10px;
+  font-family: "Monocraft", Monocraft;
+}
+
+.toolbar {
+  --background: #000;
+}
+
+.IonContent {
+  --background: #000;
+}
+
+.info-block {
+  padding: 10px;
+  width: min(480px, 90%);
+  margin: 10px auto;
+  height: auto;
+  background-color: #8b8b8b;
+  border: 3px solid #000;
+  box-shadow: inset 0 0 0 2px #c6c6c6, 0 4px 0 0 #555555;
+  text-align: center;
+}
+
+.info-block h5 {
+  color: #212121;
+  font-size: 20px;
+  font-family: Monocraft;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+
+.info-block p {
+  color: #202020;
+  font-size: 12px;
+  font-family: Monocraft;
+  font-weight: normal;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.info-block p strong {
+  color: #000;
+}
+
+#Titulo {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  background-color: #8b8b8b;
+  color: #212121;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid #000;
+  box-shadow: inset 0 0 0 2px #55ff55;
+  font-family: Monocraft;
 }
 
 .form-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    align-items: start;
-    justify-items: stretch; 
-    width: min(480px, 90%);
-    height: 360px;
-    margin: 30px auto 0 auto;
-    padding: 10px;
-    gap: 10px;
-    box-sizing: border-box;
-    background-color: #8B8B8B; 
-    border: 3px solid #000; 
-    box-shadow: 
-        inset 0 0 0 2px #C6C6C6, 
-        0 6px 0 0 #555555; 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: start;
+  justify-items: stretch;
+  width: min(480px, 90%);
+  height: auto;
+  margin: 8px auto 0 auto;
+  padding: 5px;
+  gap: 8px;
+  box-sizing: border-box;
+  background-color: #8b8b8b;
+  border: 3px solid #000;
+  box-shadow: inset 0 0 0 2px #c6c6c6, 0 6px 0 0 #555555;
 }
 
 .form-container .IonInput {
-    --padding-top: 5px;
-    --padding-bottom: 5px;
-    --padding-start: 5px;
-    --padding-end: 5px;
-    font-size: 14px;
+  --padding-top: 5px;
+  --padding-bottom: 5px;
+  --padding-start: 5px;
+  --padding-end: 5px;
+  font-size: 14px;
 }
 
 .form-container .IonInput,
 .form-container .descripcion-multi {
-    --background: #C6C6C6; 
-    --color: #212121; 
-    --placeholder-color: #555555;
-    --border-radius: 0; 
-    --padding-top: 10px;
-    --padding-bottom: 10px;
-    --padding-start: 10px;
-    --padding-end: 10px;
-    border: 2px solid #000; 
-    box-shadow: 
-        inset 0 0 0 2px #8B8B8B, 
-        inset 0 4px 0 0 #555555; 
-    font-family: monospace;
+  --background: #c6c6c6;
+  --color: #212121;
+  --placeholder-color: #555555;
+  --border-radius: 0;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 0 2px #8b8b8b, inset 0 4px 0 0 #555555;
+  font-family: Monocraft;
 }
 
 ion-input.ion-touched.IonInput::part(native) {
-    border: none;
-    box-shadow: none;
+  border: none;
+  box-shadow: none;
 }
 
 .form-container .IonInput {
-    width: 100%;
-    display: block;
+  width: 100%;
+  display: block;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --padding-start: 6px;
+  --padding-end: 6px;
+}
+
+.form-container .descripcion-multi {
+  grid-column: 1 / -1;
+  min-height: 80px;
+  grid-row: span 2;
+  width: 100%;
+  display: block;
+  box-shadow: inset 0 0 0 2px #8b8b8b, inset 0 4px 0 0 #555555;
+}
+
+.form-container .IonButton {
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 10px;
+  width: 160px;
+  --background: #5555ff;
+  --background-activated: #55ffff;
+  --color: #ffffff;
+  --border-radius: 0;
+  font-family: Monocraft;
+  font-weight: bold;
+  border: 2px solid #000;
+  box-shadow: inset 0 0 0 2px #8b8b8b, 0 4px 0 0 #0000aa;
+  transition: all 0.1s ease;
+}
+
+.form-container .IonButton:active {
+  box-shadow: inset 0 0 0 2px #8b8b8b, 0 2px 0 0 #0000aa;
+  transform: translateY(2px);
+}
+
+.form-container .IonInput {
+  font-size: 16px;
+  padding: 6px 8px;
+}
+
+@media (max-width: 425px) {
+  .form-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 95%;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 8px;
+  }
+
+  .form-container .IonInput {
     --padding-top: 6px;
     --padding-bottom: 6px;
     --padding-start: 6px;
     --padding-end: 6px;
-}
+    font-size: 14px;
+  }
 
-.form-container .descripcion-multi {
-    grid-column: 1 / -1;     
+  .form-container .descripcion-multi {
+    grid-column: 1 / -1;
     min-height: 80px;
-    grid-row: span 2;          
-    width: 100%;
-    display: block;
-    box-shadow: 
-        inset 0 0 0 2px #8B8B8B, 
-        inset 0 4px 0 0 #555555;
-}
+  }
 
-.form-container .IonButton {
-    grid-column: 1 / -1; 
-    justify-self: center; 
-    margin-top: 8px; /* Reducido a 8px */
-    width: 160px; /* Ancho un poco más pequeño */
-    --background: #5555FF; 
-    --background-activated: #55FFFF; 
-    --color: #FFFFFF;
-    --border-radius: 0; 
-    font-family: monospace;
-    font-weight: bold;
-    border: 2px solid #000;
-    box-shadow: 
-        inset 0 0 0 2px #8B8B8B, 
-        0 4px 0 0 #0000AA; 
-    transition: all 0.1s ease;
-}
+  .form-container .IonButton {
+    margin-top: 8px;
+    width: 160px;
+  }
 
-.form-container .IonButton:active {
-    box-shadow: 
-        inset 0 0 0 2px #8B8B8B, 
-        0 2px 0 0 #0000AA; 
-    transform: translateY(2px);
-}
-
-.form-container .IonInput {
-    font-size: 16px;
-    padding: 6px 8px;
-}
-
-@media (max-width: 425px) {
-    .form-container {
-        grid-template-columns: repeat(2, 1fr); 
-        width: 95%; 
-        gap: 8px;
-        margin-top: 20px; 
-        padding: 8px; 
-    }
-
-    .form-container .IonInput {
-        --padding-top: 6px;
-        --padding-bottom: 6px;
-        --padding-start: 6px;
-        --padding-end: 6px;
-        font-size: 14px;
-    }
-
-    .form-container .descripcion-multi {
-        grid-column: 1 / -1;     
-        min-height: 80px; 
-    }
-
-    .form-container .IonButton {
-        margin-top: 8px; 
-        width: 160px; 
-    }
-    
-    .info-block {
-        padding: 10px; 
-        width: 95%;
-        height: 155px;
-        margin: 10px auto;
-    }
-
-    .info-block p {
-        font-size: 12px; 
-    }
-}
-
-#Titulo {
-    padding: 8px; 
-    margin-bottom: 10px;
-}
-
-.form-container{
-    margin-top: 10px;
+  .info-block {
     padding: 10px;
+    width: 95%;
+    height: 155px;
+    margin: 10px auto;
+  }
+
+  .info-block p {
+    font-size: 12px;
+  }
 }
-
-
-
