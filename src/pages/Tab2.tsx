@@ -22,16 +22,14 @@ const Tab2: React.FC = () => {
   </IonHeader>
 
   <IonContent fullscreen>
-
     <div className='container'>
       <IonHeader id="Title">MODS DE ARMAS REGISTRADAS</IonHeader>
-
       {
         armas.map((arma) => (
           <div className="post-info" key={arma.nombre}>
             <div className='post-title'>
-              <img src="../../Img/mc.png"className='icon'/>
               <h2>{arma.nombre}</h2>
+              <img src="../../Img/mc.png" className='icon'/>
             </div>
 
             <p> <strong>Tipo:</strong> {arma.tipo}</p>
@@ -50,6 +48,7 @@ const Tab2: React.FC = () => {
         Consultar
       </IonButton>
     </div>
+
   </IonContent>
   </IonPage>
   )
