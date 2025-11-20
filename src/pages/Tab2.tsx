@@ -29,7 +29,11 @@ const Tab2: React.FC = () => {
       {
         armas.map((arma) => (
           <div className="post-info" key={arma.nombre}>
-            <h2>{arma.nombre}</h2>
+            <div className='post-title'>
+              <img src="../../Img/mc.png"className='icon'/>
+              <h2>{arma.nombre}</h2>
+            </div>
+
             <p> <strong>Tipo:</strong> {arma.tipo}</p>
             <p> <strong>Daño:</strong> {arma.danio}</p>
             <p> <strong>Especial:</strong> {arma.especial} </p>
