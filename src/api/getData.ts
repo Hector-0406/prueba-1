@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const consulta = axios.create({
-    baseURL: 'http://100.113.115.21:5000/consultarArma'
+    baseURL: 'https://n3dv4dhj-5000.usw3.devtunnels.ms/consultarArma'
 });
 
 export interface ArmaData {
