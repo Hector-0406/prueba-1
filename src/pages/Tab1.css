@@ -13,11 +13,8 @@
   --ion-font-family: "Monocraft", Monocraft;
 }
 
-.main-container {
-  text-align: center;
-  padding-bottom: 20px;
-  background-color: #000;
-  min-height: 100%;
+ion-content{
+  --background: #000;
 }
 
 .header {
@@ -33,10 +30,6 @@
 }
 
 .toolbar {
-  --background: #000;
-}
-
-.IonContent {
   --background: #000;
 }
 

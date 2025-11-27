@@ -10,7 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import {happy, square, star, triangle } from 'ionicons/icons';
+import {ellipse, square, shield, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
@@ -74,18 +74,18 @@ const App: React.FC = () => (
         <IonTabBar slot="bottom" className="minecraft-tab-bar" >
           <IonTabButton tab="tab1" href="/tab1" className='tab-button'>
             <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Crear Arma</IonLabel>
+            <IonLabel>Crear</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2" className='tab-button'>
-            <IonIcon aria-hidden="true" icon={happy} />
-            <IonLabel>Ver Armas</IonLabel>
+            <IonIcon aria-hidden="true" icon={ellipse} />
+            <IonLabel>Mods</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3" className='tab-button'>
             <IonIcon aria-hidden="true" icon={square} />
             <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab4" href="/tab4" className='tab-button'>
-            <IonIcon aria-hidden="true" icon={star} />
+            <IonIcon aria-hidden="true" icon={shield} />
             <IonLabel>Tab 4</IonLabel> 
           </IonTabButton>
         </IonTabBar>

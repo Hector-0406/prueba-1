@@ -1,10 +1,15 @@
 import axios from 'axios';
 
 export const consulta = axios.create({
-    baseURL: 'https://n3dv4dhj-5000.usw3.devtunnels.ms/consultarArma'
+    baseURL: 'http://10.3.18.22:5000/consultarArma'
+});
+
+export const actualizar = axios.create({
+    baseURL: "http://10.3.18.22:5000/actualizarArma"
 });
 
 export interface ArmaData {
+    _id: string,
     nombre: string,
     tipo: string,
     danio: string,

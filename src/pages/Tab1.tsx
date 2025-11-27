@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/rea
 import {IonInput, IonButton, IonTextarea} from '@ionic/react';
 import { useIonToast } from '@ionic/react';
 import { useState } from 'react';
-import { createPost } from '../utils/createPost';
+import { createPost } from '../utils/addPost';
 import './Tab1.css';
 
 const Tab1: React.FC = () => {
@@ -41,10 +41,10 @@ const Tab1: React.FC = () => {
           durabilidad,
           descripcion
         );
-        Toast("Arma Registrada")
+        Toast("✅ Mod Registrado");
       }catch(error){
-        console.error('Error guardando arma:', error)
-        Toast("Error al guardar arma");
+        console.error('Error guardando arma:', error);
+        Toast("⚠️ Error al guardar Mod");
       }finally{
         setIsSaving(false);
       }
@@ -59,99 +59,97 @@ const Tab1: React.FC = () => {
       </IonToolbar>
     </IonHeader>
     
-    <IonContent fullscreen className='IonContent'>
-      <div className="main-container">
-        <IonHeader id="Titulo">CREAR ARMA PERSONALIZADA</IonHeader>
+    <IonContent fullscreen>
+      <IonHeader id="Titulo">CREAR ARMA PERSONALIZADA</IonHeader>
 
-        <div className="info-block">
-          <h5>¡Bienvenido, Herrero!</h5>
-          <p>
-            Aquí puedes Crear tus propias Armas (espadas, arcos, hachas) para usarlas en tus Mods o Addons de Minecraft. 
-            <br />
-            <br />
-            Define cada atributo y ¡prepárate para la batalla!
-          </p>
-        </div>
+      <div className="info-block">
+        <h5>¡Bienvenido, Herrero!</h5>
+        <p>
+          Aquí puedes Crear tus propias Armas (espadas, arcos, hachas) para usarlas en tus Mods o Addons de Minecraft. 
+          <br />
+          <br />
+          Define cada atributo y ¡prepárate para la batalla!
+        </p>
+      </div>
 
-        <div className="form-container">
-          <IonInput 
-            className='IonInput'
-            id="nombre_arma" 
-            type="text"  
-            label='Nombre de arma'
-            placeholder="Nombre"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setNombre(e.detail.value!)} />
+      <div className="form-container">
+        <IonInput 
+          className='IonInput'
+          id="nombre_arma" 
+          type="text"  
+          label='Nombre de arma'
+          placeholder="Nombre"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setNombre(e.detail.value!)} />
 
-          <IonInput 
-            className='IonInput'
-            id="tipo_arma" 
-            type="text" 
-            label='Tipo de arma'
-            placeholder="Espada"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setTipo(e.detail.value!)} />
+        <IonInput 
+          className='IonInput'
+          id="tipo_arma" 
+          type="text" 
+          label='Tipo de arma'
+          placeholder="Espada"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setTipo(e.detail.value!)} />
 
-          <IonInput 
-            className='IonInput'
-            id="daño_arma" 
-            type="text"
-            label='Daño'
-            placeholder="10"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setDanio(e.detail.value!)} />
+        <IonInput 
+          className='IonInput'
+          id="daño_arma" 
+          type="text"
+          label='Daño'
+          placeholder="10"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setDanio(e.detail.value!)} />
 
-          <IonInput 
-            className='IonInput'
-            id="especial_arma" 
-            type="text" 
-            label='Especial'
-            placeholder="Fuego"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setEspecial(e.detail.value!)} />
+        <IonInput 
+          className='IonInput'
+          id="especial_arma" 
+          type="text" 
+          label='Especial'
+          placeholder="Fuego"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setEspecial(e.detail.value!)} />
 
-          <IonInput 
-            className='IonInput'
-            id="" 
-            type="text" 
-            label='Encantamiento'
-            placeholder="Daño de fuego"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setEncanto(e.detail.value!)} />
+        <IonInput 
+          className='IonInput'
+          id="" 
+          type="text" 
+          label='Encantamiento'
+          placeholder="Daño de fuego"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setEncanto(e.detail.value!)} />
 
-            <IonInput 
-            className='IonInput'
-            id="duarabildad" 
-            type="text" 
-            label='Durablidad'
-            placeholder="Material"
-            labelPlacement='floating'
-            fill="outline"
-            onIonChange={(e) => setDurabilidad(e.detail.value!)} />
+        <IonInput 
+          className='IonInput'
+          id="duarabildad" 
+          type="text" 
+          label='Durablidad'
+          placeholder="Material"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setDurabilidad(e.detail.value!)} />
 
-            <IonTextarea
-              className='descripcion-multi'
-              id="descripcion_arma"
-              label='Decripción'
-              placeholder="Daño de fuego a los enemigos"
-              labelPlacement='floating'
-              fill="outline"
-              onIonChange={(e) => setDescripcion(e.detail.value!)}
-              rows={4}
-              autoGrow={true}/>
+        <IonTextarea
+          className='descripcion-multi'
+          id="descripcion_arma"
+          label='Decripción'
+          placeholder="Daño de fuego a los enemigos"
+          labelPlacement='floating'
+          fill="outline"
+          onIonChange={(e) => setDescripcion(e.detail.value!)}
+          rows={4}
+          autoGrow={true}/>
 
-            <IonButton 
-              className='IonButton' 
-              onClick={Guardar}
-              disabled={isSaving}>
-              Guardar
-            </IonButton>
-        </div>
+        <IonButton 
+          className='IonButton' 
+          onClick={Guardar}
+          disabled={isSaving}>
+          Guardar
+        </IonButton>
       </div>
     </IonContent>
   </IonPage>
