@@ -3,19 +3,19 @@
   "name": "Ionic App",
   "icons": [
     {
-      "src": "../Icons/favicon.png",
+      "src": "../assets/icons/favicon.png",
       "type": "image/png",
       "sizes": "64x64",
       "purpose": "maskable"
     },
     {
-      "src": "../Icons/android.png",
+      "src": "../assets/icons/android.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "maskable"
     },
     {
-      "src": "../Icons/splash.png",
+      "src": "../assets/icons/splash.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "maskable"

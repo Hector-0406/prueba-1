@@ -101,7 +101,7 @@ const Tab2: React.FC = () => {
         className='IonButton'
         slot="end"
         onClick={() => Consultar()}>
-        <img src="../../Img/find.png" />
+        <img src="../../assets/img/find.png" />
       </IonButton>
     </IonToolbar>
   </IonHeader>
@@ -115,7 +115,7 @@ const Tab2: React.FC = () => {
 
           <div className='post-title'>
             <h2>{arma.nombre}</h2>
-            <img src="../../Img/mc.png" className='icon'/>
+            <img src="../../assets/img/mc.png" className='icon'/>
           </div>
 
           <p> <strong>Tipo:</strong> {arma.tipo}</p>
@@ -128,13 +128,13 @@ const Tab2: React.FC = () => {
           <IonButton 
             className='IonButton-del'
             onClick={() => Eliminar(arma._id)}>
-            <img src="../../Img/delete.png" className='icon-button'/>
+            <img src="../../assets/img/delete.png" className='icon-button'/>
           </IonButton>
 
           <IonButton
             onClick={() => Modal(arma)}
             className='IonButton-up'>
-            <img src="../../Img/update.png" className='icon-button'/>
+            <img src="../../assets/img/update.png" className='icon-button'/>
           </IonButton>
         </div>
       ))
@@ -145,11 +145,11 @@ const Tab2: React.FC = () => {
       <IonHeader className='modal-header'>
         <IonToolbar className='modal-toolbar'>
           <IonButton className='IonButton-up' slot="start" onClick={() => modal.current?.dismiss()}>
-            <img src="../../Img/cancel.png" alt="" />
+            <img src="../../assets/img/cancel.png" alt="" />
           </IonButton>
           <IonTitle>Actualizar</IonTitle>
           <IonButton className='IonButton-up' slot="end" onClick={() => Actualizar()}>
-            <img src="../../Img/check.png" alt="" />
+            <img src="../../assets/img/check.png" alt="" />
           </IonButton>
         </IonToolbar>
       </IonHeader>
