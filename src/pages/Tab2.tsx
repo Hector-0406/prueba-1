@@ -74,7 +74,7 @@ const Tab2: React.FC = () => {
 
     await updPost(_id, datos);
     await Consultar();
-    Toast("Arma Actualizada");
+    Toast("🔄 Arma Actualizada");
     modal.current?.dismiss();
   }
 

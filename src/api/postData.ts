@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const publicar = axios.create({
-    baseURL: 'http://10.3.18.22:5000/registrarArma'
+    baseURL: 'http://127.0.0.1:5000/registrarArma'
 });
 
 export interface ArmaPost {
