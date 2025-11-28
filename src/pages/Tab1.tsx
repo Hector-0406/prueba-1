@@ -32,7 +32,7 @@ const Tab1: React.FC = () => {
   const Guardar = async () => {
       setIsSaving(true);
       try {
-          await createPost(
+        await createPost(
           nombre,
           tipo,
           danio,
