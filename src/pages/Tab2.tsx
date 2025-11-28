@@ -145,11 +145,11 @@ const Tab2: React.FC = () => {
       <IonHeader className='modal-header'>
         <IonToolbar className='modal-toolbar'>
           <IonButton className='IonButton-up' slot="start" onClick={() => modal.current?.dismiss()}>
-            <img src="../../Img/Cancel.png" alt="" />
+            <img src="../../Img/cancel.png" alt="" />
           </IonButton>
           <IonTitle>Actualizar</IonTitle>
           <IonButton className='IonButton-up' slot="end" onClick={() => Actualizar()}>
-            <img src="../../Img/Check.png" alt="" />
+            <img src="../../Img/check.png" alt="" />
           </IonButton>
         </IonToolbar>
       </IonHeader>
